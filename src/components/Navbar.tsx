@@ -4,8 +4,8 @@ import AdminSwitch from "./AdminSwitch";
 
 const Navbar = () => {
   return (
-    <div className="sticky  top-0 z-50 bg-black w-full bg-opacity-50  h-[86px]" id="navbar">
-      <nav className="flex justify-between ">
+    <div id="navbar" className="fixed  top-0 z-50 bg-black w-full bg-opacity-50  h-[86px]" >
+      <nav className="flex justify-between items-center h-full ">
         <img
           src="volunteer-logo.png"
           alt="image-logo"
