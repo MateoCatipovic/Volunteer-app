@@ -57,12 +57,6 @@
           "name": "MARKO",
           "age": "33",
           "gender": "MUŠKO"
-        },
-        {
-          "id": "809084b7-733d-49b1-b224-c083ac11ae2f",
-          "name": "ANA",
-          "age": "28",
-          "gender": "ŽENSKO"
         }
       ]
     },
@@ -75,7 +69,55 @@
       "udruga": "",
       "description": "qqqqqqq",
       "createdAt": "05/05/2024",
+      "volonteri": [
+        {
+          "id": "8b675fdb-5fc8-47cb-977c-727cd696b49f",
+          "name": "Mirjam Mustapić",
+          "age": "27",
+          "gender": "Žensko"
+        },
+        {
+          "id": "1134091c-8e98-4695-9c8a-26bfe98fbc36",
+          "name": "Ivan Pavao Mustapić",
+          "age": "23",
+          "gender": "Muško"
+        },
+        {
+          "id": "e1206715-9f48-45a5-958b-7feda5d07787",
+          "name": "Ante Jukić",
+          "age": "29",
+          "gender": "Muško"
+        }
+      ]
+    },
+    {
+      "id": "fd63bdbe-48db-4c55-81c1-e15fef3974b8",
+      "name": "Čišćenje morskog dna",
+      "city": "Trogir",
+      "date": "30/05/2024",
+      "radioUdruga": "Da",
+      "udruga": "Dive Trogir",
+      "description": "Sakupljanje smeća i razvrstavanje otpada u na Trogirskoj rivi.",
+      "createdAt": "07/05/2024",
       "volonteri": []
+    },
+    {
+      "id": "cd8e859e-86c2-4b57-945f-a9ebc08473f3",
+      "name": "Osnovne aktivnosti s konjima",
+      "city": "Trilj",
+      "date": "26/08/2024",
+      "radioUdruga": "Da",
+      "udruga": "Jahački klub Trilj",
+      "description": "Terapijsko jahanje djece sa invaliditetom",
+      "createdAt": "08/05/2024",
+      "volonteri": [
+        {
+          "id": "46ba3685-2cea-41d1-bb95-9eea94e1cded",
+          "name": "Maja Dumić",
+          "age": "24",
+          "gender": "Žensko"
+        }
+      ]
     }
   ],
   "volonteri": [

@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
-import Input from "./Input";
-import SelectMui from "./SelectMui";
-import RadioMui from "./RadioMui";
-import TextFieldMui from "./TextFieldMui";
+import InputMemo from "./Input";
+import SelectMuiMemo from "./SelectMui";
+import RadioMuiMemo from "./RadioMui";
+import TextFieldMuiMemo from "./TextFieldMui";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 
@@ -34,7 +34,7 @@ const initialFormData = {
   description: "",
 };
 
-export default function AddModal(props) {
+ const AddModal = (props) => {
   const [open, setOpen] = useState(false);
   const [disabled, setDisabled] = useState(false);
   const [disabledUdruga, setDisabledUdruga] = useState(true);
@@ -102,14 +102,14 @@ export default function AddModal(props) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Input
+          <InputMemo
             id="name"
             value={formData.name}
             setFormData={setFormData}
             label="Naziv"
             disabled={false}
           />
-          <SelectMui
+          <SelectMuiMemo
             id="city"
             value={formData.city}
             setFormData={setFormData}
@@ -134,21 +134,21 @@ export default function AddModal(props) {
               type="date"
             />
           </div>
-          <RadioMui
+          <RadioMuiMemo
             id="radioUdruga"
             value={formData.radioUdruga}
             setFormData={setFormData}
             disabled={disabled}
             setDisabled={setDisabled}
           />
-          <Input
+          <InputMemo
             id="udruga"
             value={formData.udruga}
             setFormData={setFormData}
             label="Udruga"
             disabled={disabled}
           />
-          <TextFieldMui
+          <TextFieldMuiMemo
             id="description"
             value={formData.description}
             setFormData={setFormData}
@@ -163,3 +163,6 @@ export default function AddModal(props) {
     </div>
   );
 }
+
+const AddModalMemo = memo(AddModal)
+export default AddModalMemo;

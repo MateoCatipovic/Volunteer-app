@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { memo, useState, useEffect } from "react";
 import axios from "axios";
-import List from "../components/List";
-import AddModal from "../components/AddModal";
+import ListMemo from "../components/List";
+import AddModalMemo from "../components/AddModal";
 
 const apiAktivnosti = "http://localhost:3001/aktivnosti";
 
@@ -52,18 +52,18 @@ const Aktivnosti = () => {
     <div className="flex flex-col items-center mt-[120px] ">
       <h2 className="font-semibold text-3xl">Aktivnosti</h2>
       <div className="flex  w-[850px] justify-end mb-4 mt-8">
-        <label htmlFor="sortOrder">Sort Order:</label>
+        <label htmlFor="sortOrder">Sortiraj:</label>
         <select
           id="sortOrder"
           className="w-100 h-25 rounded-6 ml-2"
           value={sortOrder}
           onChange={handleSortChange}
         >
-          <option value="-createdAt">Date Descending</option>
-          <option value="createdAt">Date Ascending</option>
+          <option value="-createdAt">Od najnovije objave</option>
+          <option value="createdAt">Od najstarije objave</option>
         </select>
 
-        <label className="ml-4" htmlFor="cityFilter">Filter by city:</label>
+        <label className="ml-4" htmlFor="cityFilter">Filter gradova:</label>
         <select
           id="cityFilter"
           className="w-100 h-25 rounded-6 ml-2"
@@ -81,12 +81,13 @@ const Aktivnosti = () => {
           <option value="Kaštela">Kaštela</option>
         </select>
       </div>
-      <List aktivnosti={aktivnosti} fetchAktivnosti={fetchAktivnosti} />
+      <ListMemo aktivnosti={aktivnosti} fetchAktivnosti={fetchAktivnosti} />
       <div className="flex justify-end w-[850px]">
-        <AddModal fetchAktivnosti={fetchAktivnosti} />
+        <AddModalMemo fetchAktivnosti={fetchAktivnosti} />
       </div>
     </div>
   );
 };
 
-export default Aktivnosti;
+const AktivnostiMemo = memo(Aktivnosti)
+export default AktivnostiMemo;

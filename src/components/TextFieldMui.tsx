@@ -1,7 +1,8 @@
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import { memo } from "react";
 
-export default function TextFieldMui(props) {
+const TextFieldMui = (props) => {
   const handleChange = (event) => {
     props.setFormData((prevData) => ({
       ...prevData,
@@ -31,4 +32,7 @@ export default function TextFieldMui(props) {
       </div>
     </Box>
   );
-}
+};
+
+const TextFieldMuiMemo = memo(TextFieldMui);
+export default TextFieldMuiMemo;

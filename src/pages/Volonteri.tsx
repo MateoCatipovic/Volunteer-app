@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { memo } from "react";
 
 const Volonteri = () => {
-  return (
-    <div>Volonteri</div>
-  )
-}
+  return <div>Volonteri</div>;
+};
 
-export default Volonteri
+const VolonteriMemo = memo(Volonteri);
+export default VolonteriMemo;

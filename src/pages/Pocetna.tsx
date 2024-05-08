@@ -1,7 +1,7 @@
-import { useRef } from "react";
+import { memo, useRef } from "react";
 import Button from "@mui/material/Button";
 const Pocetna = () => {
-  const videoContainerRef = useRef(null);
+ // const videoContainerRef = useRef(null);
 
   const scrollToHello = () => {
     const helloDiv = document.getElementById("hello");
@@ -30,7 +30,7 @@ const Pocetna = () => {
           </div>
         </div>
 
-        <div id="hello" className="flex justify-between py-10 px-[200px]">
+        <div id="hello" className="flex justify-between py-10 px-[200px] pt-[90px]">
           <div className="w-[50%] text-left">
             <h1 className="text-2xl mb-6">
               Hello, this is volunteer app for helping people.
@@ -63,4 +63,5 @@ const Pocetna = () => {
   );
 };
 
-export default Pocetna;
+const PocetnaMemo = memo(Pocetna);
+export default PocetnaMemo;

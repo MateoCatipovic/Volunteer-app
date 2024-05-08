@@ -4,8 +4,9 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
+import { memo } from "react";
 
-export default function RadioMui(props) {
+const RadioMui = (props) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     props.setFormData((prevData) => ({
       ...prevData,
@@ -30,4 +31,7 @@ export default function RadioMui(props) {
       </RadioGroup>
     </FormControl>
   );
-}
+};
+
+const RadioMuiMemo = memo(RadioMui);
+export default RadioMuiMemo;

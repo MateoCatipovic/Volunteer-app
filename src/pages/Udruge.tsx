@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const Udruge = () => {
   return (
@@ -6,4 +6,5 @@ const Udruge = () => {
   )
 }
 
-export default Udruge
+const UdrugeMemo = memo(Udruge);
+export default UdrugeMemo

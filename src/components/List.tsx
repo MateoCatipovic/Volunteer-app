@@ -1,10 +1,10 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
-import Input from "./Input";
+import InputMemo from "./Input";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
-import { useEffect, useState } from "react";
+import {memo, useEffect, useState } from "react";
 import { GoTrash } from "react-icons/go";
 import { CiEdit } from "react-icons/ci";
 
@@ -162,13 +162,13 @@ const List = (props) => {
             onClick={() => handleOpenViewModal(aktivnost)}
             className="flex justify-between hover:shadow-2xl cursor-pointer gap-x-6 py-5 px-5"
           >
-            <div className="flex min-w-0 gap-x-4">
+            <div className="flex flex-col min-w-0 gap-x-4 ">
               {/* <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={aktivnost.imageUrl} alt="" /> */}
-              <div className="min-w-0 flex-auto">
-                <p className="text-sm font-semibold leading-6 text-gray-900">
+              <div className="min-w-0 flex-auto text-left ">
+                <p className="text-lg font-semibold leading-6 text-gray-900">
                   {aktivnost.name}
                 </p>
-                <p className="mt-1 truncate text-xs leading-5 text-gray-500">
+                <p className="mt-5 truncate text-xs leading-5 text-gray-500">
                   {aktivnost.city}
                 </p>
               </div>
@@ -297,21 +297,21 @@ const List = (props) => {
             <div className="flex flex-col p-4 ">
               <h2 className="font-semibold text-xl">Prijavi se!</h2>
               <form>
-                <Input
+                <InputMemo
                   id="name"
                   value={noviVolonter.name}
                   setFormData={setNoviVolonter}
                   label="Ime i prezime"
                   disabled={false}
                 />
-                <Input
+                <InputMemo
                   id="age"
                   value={noviVolonter.age}
                   setFormData={setNoviVolonter}
                   label="Godine"
                   disabled={false}
                 />
-                <Input
+                <InputMemo
                   id="gender"
                   value={noviVolonter.gender}
                   setFormData={setNoviVolonter}
@@ -359,4 +359,5 @@ const List = (props) => {
   );
 };
 
-export default List;
+const ListMemo = memo(List);
+export default ListMemo;

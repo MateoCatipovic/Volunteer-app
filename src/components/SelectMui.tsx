@@ -1,10 +1,10 @@
-import * as React from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import {memo} from "react"
 
-export default function SelectMui(props) {
+const SelectMui = (props) => {
   const handleChange = (event: SelectChangeEvent) => {
     props.setFormData((prevData) => ({
       ...prevData,
@@ -36,3 +36,6 @@ export default function SelectMui(props) {
     </div>
   );
 }
+
+const SelectMuiMemo = memo(SelectMui);
+export default SelectMuiMemo

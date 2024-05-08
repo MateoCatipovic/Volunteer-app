@@ -1,36 +1,35 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
-import ErrorPage from "./components/ErrorPage.tsx";
-import Pocetna from "./pages/Pocetna.tsx";
-import Aktivnosti from "./pages/Aktivnosti.tsx";
-import Volonteri from "./pages/Volonteri.tsx";
-import Udruge from "./pages/Udruge.tsx";
+import AppMemo from "./App.tsx";
+import ErrorPageMemo from "./components/ErrorPage.tsx";
+import PocetnaMemo from "./pages/Pocetna.tsx";
+import AktivnostiMemo from "./pages/Aktivnosti.tsx";
+import VolonteriMemo from "./pages/Volonteri.tsx";
+import UdrugeMemo from "./pages/Udruge.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
+    element: <AppMemo />,
+    errorElement: <ErrorPageMemo />,
     children: [
       {
-        path: "pocetna",
-        element: <Pocetna />,
+        path: "/",
+        element: <PocetnaMemo />,
       },
       {
         path: "aktivnosti",
-        element: <Aktivnosti />,
+        element: <AktivnostiMemo />,
       },
       {
         path: "volonteri",
-        element: <Volonteri />,
+        element: <VolonteriMemo />,
       },
       {
         path: "udruge",
-        element: <Udruge />,
+        element: <UdrugeMemo />,
       },
     ],
   },
